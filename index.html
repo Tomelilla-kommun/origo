@@ -30,16 +30,15 @@
         const globe = Globe({
           showGlobe: true,
           globeOnStart: true,
-          deactivateControls: ['search'],
+          deactivateControls: [],
           settings: {
-            depthTestAgainstTerrain: false,
+            depthTestAgainstTerrain: true,
             enableAtmosphere: true,
             enableGroundAtmosphere: true,
             enableFog: true,
-            showSkirts: true,
-            enableLighting: false,
+            enableLighting: true,
             shadows: {
-              darkness: 0.8,
+              darkness: 0.3,
               fadingEnabled: true,
               maximumDistance: 5000,
               normalOffset: true,
@@ -47,7 +46,7 @@
               softShadows: false
             },
             skyBox: {
-              url: 'http://localhost:9966/plugins/globe/cesiumassets/Assets/Textures/SkyBox/',
+              url: '../plugins/globe/cesiumassets/Assets/Textures/SkyBox/',
               images: {
                 pX: 'tycho2t3_80_px.jpg',
                 nX: 'tycho2t3_80_mx.jpg',
@@ -58,21 +57,21 @@
               }
             }
           },
-        cesiumIontoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMzlhOGYyNy0wNmJlLTQyN2UtYWRmOS02ZTc5ODI1Y2IxMjgiLCJpZCI6MTEyMjM2LCJpYXQiOjE3MzkyODkxMTJ9.UhHHrNp_ihRzssD5_eNWG_6MV8wndNA05nKf_hQoEAg',
+        // cesiumIontoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMzlhOGYyNy0wNmJlLTQyN2UtYWRmOS02ZTc5ODI1Y2IxMjgiLCJpZCI6MTEyMjM2LCJpYXQiOjE3MzkyODkxMTJ9.UhHHrNp_ihRzssD5_eNWG_6MV8wndNA05nKf_hQoEAg',
           // "gltf": [
           //   {
-          //     "url": "http://localhost:9966/data/origo_globe.gltf",
-          //     "lat": 18.10697,
-          //     "lng": 59.12514,
-          //     "height": 0, // Needs heightReference to be set to NONE
-          //     "heightReference": "RELATIVE_TO_TERRAIN", //https://cesium.com/learn/ion-sdk/ref-doc/global.html?classFilter=heightReference#HeightReference
-          //     "animation": {
-          //       "name": "SphereAction"
-          //     }
+          //     "url": "../data/Idrottshall/1.gltf",
+          //       "lat": 55.5437,
+          //       "lng": 13.9511,
+          //     "height": 10, // Needs heightReference to be set to NONE
+          //     // "heightReference": "RELATIVE_TO_TERRAIN", //https://cesium.com/learn/ion-sdk/ref-doc/global.html?classFilter=heightReference#HeightReference
+          //     // "animation": {
+          //     //   "name": "SphereAction"
+          //     // }
           //   }
           // ],
-          cesiumTerrainProvider: 'http://localhost:9966/data/terrain/',
-          //cesiumIonassetIdTerrain: 1
+          cesiumTerrainProvider: '../data/TerrainOptimized17/',
+          // cesiumIonassetIdTerrain: 1
         });
         viewer.addComponent(globe);
       });
@@ -92,11 +91,11 @@
           "maxZoomLevel": 7, 
           "municipalities": "Tomelilla",
           "showFeature": "geometryOnly",
-          "urlFastighet": "https://kartor.tomelilla.se/origoserver/lm/registerenheter?lmuser=tome0001&srid=3008",
-          "urlAdress": "https://kartor.tomelilla.se/origoserver/lm/addresses?lmuser=tome0001&srid=3008",
-          "urlOrt": "https://kartor.tomelilla.se/origoserver/lm/placenames?lmuser=tome0001&srid=3008",
-          "urlYta": "https://kartor.tomelilla.se/origoserver/lm/registerenheter/objectId/enhetsomraden?lmuser=tome0001&srid=3008",
-          "urlYtaKordinat": "https://kartor.tomelilla.se/origoserver/lm/enhetsomraden?x=easting&y=northing&srid=3008",
+          "urlFastighet": "https://kartor.tomelilla.se/origoserver/lm/registerenheter?lmuser=tome0001&srid=3857",
+          "urlAdress": "https://kartor.tomelilla.se/origoserver/lm/addresses?lmuser=tome0001&srid=3857",
+          "urlOrt": "https://kartor.tomelilla.se/origoserver/lm/placenames?lmuser=tome0001&srid=3857",
+          "urlYta": "https://kartor.tomelilla.se/origoserver/lm/registerenheter/objectId/enhetsomraden?lmuser=tome0001&srid=3857",
+          "urlYtaKordinat": "https://kartor.tomelilla.se/origoserver/lm/enhetsomraden?x=easting&y=northing&srid=3857",
         });
         viewer.addComponent(lmsearch);
       });

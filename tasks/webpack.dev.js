@@ -1,6 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
-const CompressionPlugin = require('compression-webpack-plugin');
+const path = require('path');
 
 module.exports = merge(common, {
   output: {
@@ -14,26 +14,26 @@ module.exports = merge(common, {
   },
   devServer: {
     static: {
-      directory: './'
+      directory: path.join(__dirname, '../') // Correct directory path
     },
     port: 9966,
     setupMiddlewares: (middlewares, devServer) => {
       devServer.app.get('*.terrain', function(req, res, next) {
-        req.url = req.url + '.gz';
-        res.set('Content-Encoding', 'gzip');
+        console.log('Requesting:', req.url);  // Log request URL for debugging
+        res.setHeader('Content-Type', 'application/octet-stream'); // safe default
+        // res.setHeader('Content-Encoding', 'gzip'); //  keep this if your terrain tiles are stored gzipped (they usually are)
+        res.setHeader('Cache-Control', 'public, max-age=2592000'); // 30 days
+        next();
+      });
+      devServer.app.get('*.glb', function(req, res, next) {
+        console.log('Requesting:', req.url);  // Log request URL for debugging
+        res.setHeader('Content-Type', 'model/gltf-binary');
+        res.setHeader('Cache-Control', 'public, max-age=2592000');
         next();
       });
       return middlewares;
     }
   },
   devtool: 'eval-cheap-source-map',
-  plugins: [
-    new CompressionPlugin({
-      filename: '[path][base].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$|\.terrain$/, // Include .terrain files
-      threshold: 10240,
-      minRatio: 0.8
-    })
-  ]
 });
+

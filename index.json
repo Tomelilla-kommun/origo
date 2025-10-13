@@ -1,1644 +1,2263 @@
 {
 	"controls": [
-	  {
-		"name": "home",
-		"options": {
-		  "zoomOnStart": true
+		{
+			"name": "home",
+			"options": {
+				"zoomOnStart": true
+			}
+		},
+		{
+			"name": "mapmenu",
+			"options": {
+				"isActive": false
+			}
+		},
+		{
+			"name": "sharemap",
+			"options": {
+				"storeMethod": "saveStateToServer",
+				"serviceEndpoint": "https://kartor.tomelilla.se/mapstate",
+				"title": "Dela karta"
+			}
+		},
+		{
+			"name": "link",
+			"options": {
+				"title": "Tomelilla",
+				"url": "https://www.tomelilla.se"
+			}
+		},
+		{
+			"name": "draw",
+			"options": {
+				"buttonText": "Rita",
+				"placement": ["menu", "screen"],
+				"drawTools": {
+					"Polygon": ["freehand", "box"],
+					"LineString": ["freehand"]
+				},
+				"showAttributeButton": true,
+				"showDownloadButton": true,
+				"multipleLayers": true,
+				"queryable": true,
+				"removable": true,
+				"exportable": true,
+				"layerTitle": "Ritlager",
+				"groupTitle": "Ritlåda",
+				"groupName": "rit"
+			}
+		},
+		{
+			"name": "scalePicker"
+		},
+		{
+			"name": "geoposition"
+		},
+		{
+			"name": "draganddrop",
+			"options": {
+				"groupName": "drag-and-drop-layers",
+				"groupTitle": "Importerade lager",
+				"styleByAttribute": true,
+				"draggable": true
+			}
+		},
+		{
+			"name": "print",
+			"options": {
+				"leftFooterText": "OBS: Kartan är inte rättsligt gällande.",
+				"showCreated": true,
+				"createdPrefix": "Skapad ",
+				"placement": ["menu", "screen"],
+				"logo": {
+					"cls": "padding-bottom-small",
+					"src": "img/png/logo.png",
+					"style": {
+						"height": "3rem"
+					}
+				}
+			}
+		},
+		{
+			"name": "legend",
+			"options": {
+				"expanded": true,
+				"turnOffLayersControl": true,
+				"visibleLayersControl": true,
+				"searchLayersControl": true,
+				"searchLayersMinLength": 2,
+				"searchLayersLimit": 10,
+				"searchLayersParameters": ["name", "title", "abstract"],
+				"contentStyle": {
+					"width": "300px"
+				}
+			}
+		},
+		{
+			"name": "position",
+			"options": {
+				"title": "SWEREF99 1330",
+				"projections": {
+					"EPSG:3006": "SWEREF99 TM",
+					"EPSG:3857": "Web Mercator"
+				}
+			}
+		},
+		{
+			"name": "measure",
+			"options": {
+				"hideWhenEmbedded": false,
+				"showSegmentLengths": true,
+				"elevationServiceURL": "https://kartor.tomelilla.se/origoserver/lm/elevation/3857/{easting}/{northing}",
+				"elevationAttribute": "geometry.coordinates[2]",
+				"snap": true,
+				"measureTools": ["area", "length", "elevation"]
+			}
 		}
-	  },
-	  {
-		"name": "mapmenu",
-		"options": {
-		  "isActive": false
-		}
-	  },
-	  {
-		"name": "sharemap"
-	  },
-	  {
-		"name": "geoposition"
-	  },
-	  {
-		"name": "print"
-	  },
-	  {
-		"name": "about",
-		"options": {
-		  "buttonText": "Om Origo",
-		  "title": "Om Origo",
-		  "content": "<p>Origo är ett ramverk för webbkartor. Ramverket bygger på JavaScript-biblioteket OpenLayers. Du kan använda Origo för att skapa egna webbaserade kartapplikationer.</p><br><p>Projektet drivs och underhålls av ett antal svenska kommuner. Besök gärna <a href='https://github.com/origo-map/origo' target='_blank'>Origo på GitHub</a> för mer information.</p>"
-		}
-	  },
-	  {
-		"name": "link",
-		"options": {
-		  "title": "Origo",
-		  "url": "https://github.com/origo-map/origo"
-		}
-	  },
-	  {
-		"name": "legend",
-		"options": {
-		  "labelOpacitySlider": "Opacity",
-		  "useGroupIndication": true
-		}
-	  },
-	  {
-		"name": "position",
-		"options": {
-		  "title": "Web Mercator",
-		  "projections": {
-			"EPSG:4326": "WGS84",
-			"EPSG:3006": "Sweref99 TM"
-		  }
-		}
-	  },
-	  {
-		"name": "measure"
-	  },
-	  {
-		"name": "search",
-		"options": {
-		  "url": "https://karta.haninge.se/origoserver/search",
-		  "searchAttribute": "NAMN",
-		  "titleAttribute": "TITLE",
-		  "contentAttribute": "NAMN",
-		  "geometryAttribute": "GEOM",
-		  "groupSuggestions": true,
-		  "hintText": "Sök...",
-		  "maxZoomLevel": 12,
-		  "minLength": 2
-		}
-	  }
 	],
-	"mapInteractions": {
-	  "embedded": false
-	},
 	"pageSettings": {
-	  "footer": {
-		"img": "img/png/logo.png",
-		"url": "https://github.com/origo-map/origo",
-		"text": "Origo"
-	  },
-	  "mapGrid": {
-		"visible": true
-	  }
+		"footer": {
+			"img": "img/png/logo.png",
+			"url": "https://www.tomelilla.se/",
+			"text": "Tomelilla kommun"
+		},
+		"mapGrid": {
+			"visible": false
+		}
 	},
-	"projectionCode": "EPSG:3857",
-	"projectionExtent": [1116534.50, 7354106.79, 2690592.10, 10772565.25],
-	"extent": [1116534.50, 7354106.79, 2690592.10, 10772565.25],
-	"center": [1560638.59, 7482749.80],
-	"zoom": 11,
-	"resolutions": [
-		156543.03390625,
-		78271.516953125,
-		39135.7584765625,
-		19567.87923828125,
-		9783.939619140625,
-		4891.9698095703125,
-		2445.9849047851562,
-		1222.9924523925781,
-		611.4962261962891,
-		305.74811309814453,
-		152.87405654907226,
-		76.43702827453613,
-		55.99999999999999,
-		38.218514137268066,
-		27.999999999999996,
-		19.109257068634033,
-		13.999999999999998,
-		9.554628534317017,
-		8.399999999999999,
-		4.777314267158508,
-		4.199999999999999,
-		2.8,
-		2.388657133579254,
-		1.4,
-		1.194328566789627,
-		0.5971642833948135,
-		0.5599999999999999, 
-		0.29858214169740677,
-		0.28,
-		0.14929107084870338,
-		0.11,
-		0.07464553542435169,
-		0.037322767712175846,
-		0.028,
-		0.018661383856087923,
-		0.009330691928043961,
-		0.004665345964021981,
-		0.0023326729820109904,
-		0.0011663364910054952,
-		5.831682455027476E-4,
-		2.915841227513738E-4,
-		1.457920613756869E-4
-	],
+	"tileGridOptions": {
+		"tileSize": 256,
+		"extent": [1517435, 7428696, 1605076, 7529924],
+		"origin": [-20037508.342789244, 20037508.342789244]
+	},
+  "projectionCode": "EPSG:3857",
+  "projectionExtent": [1512435, 7423696, 1610076, 7534924],
+  "extent": [1517435, 7428696, 1605076, 7529924],
+  "center": [1560638.59, 7482749.80],
+  "zoom": 11,
+  "resolutions": [
+    156543.03390625,
+    78271.516953125,
+    39135.7584765625,
+    19567.87923828125,
+    9783.939619140625,
+    4891.9698095703125,
+    2445.9849047851562,
+    1222.9924523925781,
+    611.4962261962891,
+    305.74811309814453,
+    152.87405654907226,
+    76.43702827453613,
+    38.218514137268066,
+    19.109257068634033,
+    9.554628534317017,
+    4.777314267158508,
+    2.388657133579254,
+    1.194328566789627,
+    0.5971642833948135,
+    0.29858214169740677,
+    0.14929107084870338,
+    0.07464553542435169,
+    0.037322767712175846
+  ],
 	"featureinfoOptions": {
 	  "infowindow": "infowindow"
 	},
 	"source": {
-	  "geowebcache": {
-		"url": "https://geodata.haninge.se/geowebcache/service/wmts"
-	  },
-	  "qgis_karta": {
-		"url": "https://karta.haninge.se/services/karta/ows?WITH_GEOMETRY=true&FI_POINT_TOLERANCE=5&FI_LINE_TOLERANCE=5"
-	  },
-	  "geoserver": {
-		  "url": "https://kartor.tomelilla.se/geoserver/webservices/ows"
-	  },
-	  "bakgrund": {
-		  "url": "https://kartor.tomelilla.se/geoserver/webservices/wms"
-	  },
-	  "geostore": {
-		  "url": "https://kartor.tomelilla.se/geoserver/geostore/ows"
-	  },
-	  "tlaservices": {
-		  "url": "https://kartor.tomelilla.se/geoserver/tlaservices/ows"
-	  }
+		"geoserver": {
+			"url": "https://kartor.tomelilla.se/geoserver/webservices/ows"
+		},
+		"bakgrund": {
+			"url": "https://kartor.tomelilla.se/geoserver/webservices/wms"
+		},
+		"geostore": {
+			"url": "https://kartor.tomelilla.se/geoserver/geostore/ows"
+		},
+		"tlaservices": {
+			"url": "https://kartor.tomelilla.se/geoserver/tlaservices/ows"
+		}
 	},
 	"groups": [
-		  {
-			  "name": "background",
-			  "title": "Bakgrundskartor",
-			  "expanded": true
-		  },
-		  {
-		  "name": "threed",
-		  "title": "3D informationsmodeller",
-		  "expanded": true
-		  },
-		  {
-			  "name": "twod",
-			  "title": "2D informationsmodeller",
-			  "expanded": true
-			  },
-		  {
-			  "name": "bygga_bo_miljo",
-			  "title": "Bygga, bo & miljö",
-			  "expanded": false,
-			  "groups": [
-				  {
-					  "name": "detaljplanering",
-					  "title": "Detaljplanering",
-					  "expanded": false
-				  },
-				  {
-					  "name": "op2025",
-					  "title": "Översiktsplanering",
-					  "expanded": false,
-					  "groups": [
-						  {
-							  "name": "riksintressen",
-							  "title": "Riksintressen"
-						  }
-					  ]
-				  }
-			  ]
-		  },
-		  {
-			  "name": "kultur",
-			  "title": "Kultur",
-			  "expanded": false
-		  },
-		  {
-			  "name": "stod_omsorg",
-			  "title": "Stöd & omsorg",
-			  "expanded": false
-		  },
-		  {
-			  "name": "uppleva_gora",
-			  "title": "Uppleva & göra",
-			  "expanded": false
-		  },
-		  {
-			  "name": "trafik_resor",
-			  "title": "Trafik & resor",
-			  "expanded": false
-		  },
-		  {
-			  "name": "utbildning_och_barnomsorg",
-			  "title": "Utbildning och barnomsorg",
-			  "expanded": false
-		  },
-		  {
-			  "name": "historiska",
-			  "title": "Historiska kartor & gamla ortofoto",
-			  "expanded": false,
-			  "exclusive": true
-		  }
-	  ],
-	"layers": [
 	  {
-		"name": "googlemaps",
-		"title": "googlemaps",
-		"type": "THREEDTILE",
-		"abstract": "googlemaps",
-		"url": 2275207,
-		"maximumScreenSpaceError": 16,
-		"group": "threed"
+			"name": "background",
+			"title": "Bakgrundskartor",
+			"expanded": true
 	  },
 	  {
-		"name": "osm_buildings",
-		"title": "OSM byggnader",
+		"name": "threed",
+		"title": "3D informationsmodeller",
+		"expanded": true,
+		"groups": [
+			{
+				"name": "Idrottshallar",
+				"title": "Idrottshallar",
+				"expanded": false
+			}
+		]
+	  },
+	  {
+			"name": "twod",
+			"title": "Detaljplaner",
+		"expanded": false
+			},
+		{
+			"name": "bygga_bo_miljo",
+			"title": "Bygga, bo & miljö",
+			"expanded": false,
+			"groups": [
+				{
+					"name": "detaljplanering",
+					"title": "Detaljplanering",
+					"expanded": false
+				},
+				{
+					"name": "op2025",
+					"title": "Översiktsplanering",
+					"expanded": false,
+					"groups": [
+						{
+							"name": "riksintressen",
+							"title": "Riksintressen"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "kultur",
+			"title": "Kultur",
+			"expanded": false
+		},
+		{
+			"name": "stod_omsorg",
+			"title": "Stöd & omsorg",
+			"expanded": false
+		},
+		{
+			"name": "uppleva_gora",
+			"title": "Uppleva & göra",
+			"expanded": false
+		},
+		{
+			"name": "trafik_resor",
+			"title": "Trafik & resor",
+			"expanded": false
+		},
+		{
+			"name": "utbildning_och_barnomsorg",
+			"title": "Utbildning och barnomsorg",
+			"expanded": false
+		},
+		{
+			"name": "historiska",
+			"title": "Historiska kartor & gamla ortofoto",
+			"expanded": false,
+			"exclusive": true
+	  }
+	],
+	"layers": [
+	//   {
+	// 	"name": "osm_buildings",
+	// 	"title": "OSM byggnader",
+	// 	"type": "THREEDTILE",
+	// 	"abstract": "Byggnader från OSM",
+	// 	"url": "OSM-Buildings",
+	// 	"group": "threed",
+	// 	"queryable": true,
+	// 	"maximumScreenSpaceError": 16,
+	// 	"showOutline": true,
+	// 	"outlineColor": "SNOW",
+	// 	"altitudeMode": "clampToGround",
+	// 	"visible": false,
+	// 	"filter": "${feature['elementId']} !== 412278471",
+	// 	"style": {
+	// 	  "color": {
+	// 		"conditions": [
+	// 		  [
+	// 			"${feature['building']} === 'civic' || ${feature['building']} === 'construction' || ${feature['building']} === 'church'",
+	// 			"color('#ed6258', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'commercial' || ${feature['building']} === 'retail' || ${feature['building']} === 'office'",
+	// 			"color('#af8b74', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'apartments' || ${feature['building']} === 'residential' || ${feature['building']} === 'house' || ${feature['building']} === 'yes' || ${feature['building']} === 'roof'",
+	// 			"color('#c98754', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'warehouse' || ${feature['building']} === 'manufacture' || ${feature['building']} === 'industrial'",
+	// 			"color('#919494', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'school' || ${feature['amenity']} === 'university' || ${feature['building']} === 'kindergarten'",
+	// 			"color('#ef7f77', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'parking' || ${feature['amenity']} === 'parking' || ${feature['building']} === 'garages' || ${feature['building']} === 'garage'",
+	// 			"color('#af8b74', 1)"
+	// 		  ],
+	// 		  [
+	// 			"${feature['building']} === 'farm_auxiliary' || ${feature['building']} === 'detached'",
+	// 			"color('#a69774', 1)"
+	// 		  ],
+	// 		  [
+	// 			true,
+	// 			"color('#ef7f77', 1)"
+	// 		  ]
+	// 		],
+	// 		"heightReference": "CLAMP_TO_GROUND"
+	// 	  }
+	// 	}
+	//   },
+	//   {
+	// 	"name": "origo-cities",
+	// 	"title": "Origokommuner",
+	// 	"group": "twod",
+	// 	"source": "data/origo-cities-3857.geojson",
+	// 	"style": "origo-logo",
+	// 	"type": "GEOJSON",
+	// 	"altitudeMode": "clampToGround",
+	// 	"attributes": [
+	// 	  {
+	// 		"name": "name"
+	// 	  }
+	// 	],
+	// 	"visible": false
+	//   },
+	{
+		"name": "Byggnader",
+		"title": "Byggnader LoD1",
 		"type": "THREEDTILE",
-		"abstract": "Byggnader från OSM",
-		"url": "OSM-Buildings",
+		"abstract": "Byggnader",
+		"url": "../data/byggnader/tileset.json",
 		"group": "threed",
 		"queryable": true,
 		"maximumScreenSpaceError": 16,
+		"maximumMemoryUsage": 2048,
 		"showOutline": true,
-		"outlineColor": "SNOW",
+		"outlineColor": "BLACK",
 		"visible": false,
-		"filter": "${feature['elementId']} !== 412278471",
 		"style": {
-		  "color": {
-			"conditions": [
-			  [
-				"${feature['building']} === 'civic' || ${feature['building']} === 'construction' || ${feature['building']} === 'church'",
-				"color('#ed6258', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'commercial' || ${feature['building']} === 'retail' || ${feature['building']} === 'office'",
-				"color('#af8b74', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'apartments' || ${feature['building']} === 'residential' || ${feature['building']} === 'house' || ${feature['building']} === 'yes' || ${feature['building']} === 'roof'",
-				"color('#c98754', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'warehouse' || ${feature['building']} === 'manufacture' || ${feature['building']} === 'industrial'",
-				"color('#919494', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'school' || ${feature['amenity']} === 'university' || ${feature['building']} === 'kindergarten'",
-				"color('#ef7f77', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'parking' || ${feature['amenity']} === 'parking' || ${feature['building']} === 'garages' || ${feature['building']} === 'garage'",
-				"color('#af8b74', 1)"
-			  ],
-			  [
-				"${feature['building']} === 'farm_auxiliary' || ${feature['building']} === 'detached'",
-				"color('#a69774', 1)"
-			  ],
-			  [
-				true,
-				"color('#ef7f77', 1)"
-			  ]
-			],
-			"heightReference": "CLAMP_TO_GROUND"
-		  }
+			"color": "color('#FFFFFF', 1)"
 		}
 	  },
 	  {
-		"name": "origo-cities",
-		"title": "Origokommuner",
-		"group": "twod",
-		"source": "data/origo-cities-3857.geojson",
-		"style": "origo-logo",
-		"type": "GEOJSON",
-		"attributes": [
-		  {
-			"name": "name"
-		  }
-		],
-		"visible": true
-	  },
-	  {
-		"name": "markinnehav",
-		"source": "qgis_karta",
-		"title": "Haninge kommuns markinnehav",
-		"abstract": "Visar markyta som ägs av Haninge Kommun, inte inkluderat kommunala bolag. Inkluderar inte heller byggnader som kommunen äger på ofri grund.<br>",
-		"group": "twod",
+		"name": "Byggnader",
+		"title": "Byggnader LoD2",
+		"type": "THREEDTILE",
+		"abstract": "Byggnader",
+		"url": "../data/tileset2/tileset.json",
+		"group": "threed",
 		"queryable": true,
-		"style": "markinnehav",
-		"type": "WMS",
-		"geometry": "geom",
-		"renderMode": "image",
-		"visible": false,
-		"attribution": "&copy Lantmäteriet",
-		"format": "image/png",
-		"attributes": [
-		  {
-			"name": "Ägare",
-			"title": "Ägare: "
-		  }
-		]
-	  },
-	  {
-		  "name": "geostore:vardcentral",
-		  "title": "Vårdcentral",
-		  "group": "stod_omsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "vardcentral",
-		  "renderMode": "image",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:sarskilda_boenden",
-		  "title": "Särskilda boenden",
-		  "group": "stod_omsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "sarskilda_boenden",
-		  "type": "WFS",
-		  "renderMode": "image",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "boende",
-				  "title": "Boende: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "name": "adress",
-				  "title": "Adress: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:vindkraft_op2040",
-		  "title": "Utredningsområden för vindkraft",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "opacity": 0.7,
-		  "source": "geostore",
-		  "hasThemeLegend": true,
-		  "type": "WMS",
-		  "visible": false,
-		  "format": "image/png",
-		  "attributes": [
-			  {
-				  "name": "omr_num",
-				  "title": "Nummer: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:vaghallare_2024_tmla",
-		  "title": "Väghållare",
-		  "group": "trafik_resor",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "hasThemeLegend": true,
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "vaghallart",
-				  "title": "Väghållartyp: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:dagcentral",
-		  "title": "Träffpunkt för seniorer",
-		  "group": "stod_omsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "dagcentral",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url",
-				  "title": "Länk till hemsida"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "webservices:fastighetsindelning",
-		  "title": "Fastighetsindelning",
-		  "group": "bygga_bo_miljo",
-		  "queryable": false,
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "style": "empty",
-		  "visible": false
-	  },
-	  {
-		  "name": "geostore:kommunagd",
-		  "title": "Kommunägd mark",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "kommunagd",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "fastighet",
-				  "title": "Fastighet: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:detaljplaner",
-		  "title": "Gällande detaljplaner",
-		  "group": "detaljplanering",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "detaljplaner",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "planbet",
-				  "title": "Planbeteckning: "
-			  },
-			  {
-				  "name": "plnamn",
-				  "title": "Plannamn: "
-			  },
-			  {
-				  "name": "tome_bet",
-				  "title": "Intern beteckning: "
-			  },
-			  {
-				  "name": "plantyp",
-				  "title": "Plantyp: "
-			  },
-			  {
-				  "name": "laga kraft",
-				  "title": "Laga kraft: "
-			  },
-			  {
-				  "name": "fastställd (kungl/läns)",
-				  "title": "Fastställd: "
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/{{omrade}}/{{plankarta}}.pdf'>Plankarta"
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/{{omrade}}/{{planbeskrivning}}.pdf'>Planbeskrivning"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:pagaende_planer",
-		  "title": "Pågående detaljplaner",
-		  "group": "detaljplanering",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "visible": false,
-		  "filter": "status == 'Pågående'",
-		  "style": "pagaende_planer",
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Planbenämning: "
-			  },
-			  {
-				  "name": "status",
-				  "title": "Status: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:skola_tomelillapoi__skolor",
-		  "title": "Grundskola",
-		  "group": "utbildning_och_barnomsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "skolor",
-		  "type": "WFS",
-		  "filter": "undergrupp = 'Grundskolor'",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "titel",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivnin",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:skola_tomelillapoi__forskolor",
-		  "title": "Förskola",
-		  "group": "utbildning_och_barnomsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "forskolor",
-		  "type": "WFS",
-		  "filter": "undergrupp = 'Förskolor'",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "titel",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivnin",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:skola_tomelillapoi__ovriga",
-		  "title": "Andra skolor",
-		  "group": "utbildning_och_barnomsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "skolor",
-		  "type": "WFS",
-		  "filter": "undergrupp = 'Andra skolor'",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "titel",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivnin",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:skola_upptagningsomraden",
-		  "title": "Upptagningsområden",
-		  "group": "utbildning_och_barnomsorg",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "skoldistrikt",
-				  "title": "Skoldistrikt: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:badplats",
-		  "title": "Simbassänger",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "badplats",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:utegym",
-		  "title": "Utegym",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "idrottsanl",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url",
-				  "title": "Mer information"
-			  },
-			  {
-				  "img": "foto",
-				  "urlPrefix": "https://kartor.tomelilla.se/img/lekplatser/"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:lekplatser",
-		  "title": "Lekplatser",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "sporthall",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Typ: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "carousel": "url",
-				  "urlPrefix": "https://gis.tomelilla.se/detaljplaner/INVENTERINGAR/lekplatser/",
-				  "splitter": ","
-			  }
-		  ]
-	  },
-	  {
-		  "name": "motionsleder",
-		  "title": "Motionsleder",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "motionsleder",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "plats",
-				  "title": "Plats: "
-			  },
-			  {
-				  "name": "stracka",
-				  "title": "Sträcka: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "vandringsleder",
-		  "title": "Vandringsleder",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "vandringsleder",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:cykelleder_2025",
-		  "title": "Cykelleder",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "hasThemeLegend": true,
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "klassifice",
-				  "title": "Klassificering: "
-			  },
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "ridleder",
-		  "title": "Ridleder",
-		  "group": "uppleva_gora",
-		  "queryable": false,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false
-	  },
-	  {
-		  "name": "hundrastgardar",
-		  "title": "Hundrastgårdar",
-		  "group": "uppleva_gora",
-		  "queryable": false,
-		  "source": "geostore",
-		  "style": "hundrastgardar",
-		  "type": "WFS",
-		  "visible": false
-	  },
-	  {
-		  "name": "geostore:Skaneflex",
-		  "title": "Skåneflex",
-		  "group": "trafik_resor",
-		  "queryable": true,
-		  "source": "geostore",
-		  "opacity": 0.6,
-		  "hasThemeLegend": true,
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "html": "<a target='_blank' href='https://www.skanetrafiken.se/skaneflex'>Läs mer om Skåneflex"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:idrottsanl",
-		  "title": "Idrottsanläggning",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "idrottsanl",
-		  "type": "WFS",
-		  "filter": "kategori = 'idrottsplats'",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:infopoints",
-		  "title": "Infopoints",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "infopoints",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "Namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "Adress",
-				  "title": "Adress: "
-			  },
-			  {
-				  "name": "Öppettider",
-				  "title": "Öppettider: "
-			  },
-			  {
-				  "name": "Hemsida",
-				  "title": "Hemsida: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:idrottsanl__sporthall",
-		  "title": "Sporthall",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "sporthall",
-		  "type": "WFS",
-		  "filter": "kategori = 'sporthall'",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:grillplatser",
-		  "title": "Grillplatser",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "style": "grillplatser",
-		  "type": "WFS",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "sittplatser",
-				  "title": "Sittplatser: "
-			  },
-			  {
-				  "img": "photo1",
-				  "urlPrefix": "https://kartor.tomelilla.se/img/grill/"
-			  },
-			  {
-				  "img": "photo2",
-				  "urlPrefix": "https://kartor.tomelilla.se/img/grill/"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:naturvardsprg",
-		  "title": "Naturreservat och naturvårdsområden",
-		  "group": "uppleva_gora",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "style": "naturvard",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "title",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "desc",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "title": "Mer information",
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:lediga_tomter",
-		  "title": "Lediga bostadstomter",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "filter": "status == '1'",
-		  "visible": false,
-		  "style": "lediga_tomter_extern",
-		  "hasThemeLegend": true,
-		  "attributes": [
-			  {
-				  "name": "title",
-				  "title": "Fastighet: "
-			  },
-			  {
-				  "name": "desc",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://tomelilla.se/byggaboochmiljo/tomterochmark/ledigabostadstomter.1476.html'>Läs mer"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "tomtko_omraden",
-		  "title": "Tomtkö områden",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "style": "tomtko_omraden",
-		  "hasThemeLegend": true,
-		  "attributes": [
-			  {
-				  "name": "name",
-				  "title": "Område: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "ledig_verksamhetsmark",
-		  "title": "Ledig verksamhetsmark",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "style": "ledig_verksamhetsmark",
-		  "hasThemeLegend": true,
-		  "attributes": [
-			  {
-				  "name": "Fastighet",
-				  "title": "Fastighetsbeteckning: "
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://tomelilla.se/naringslivochforetagande/verksamhetsmark.2485.html'>Läs mer"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "byggnader_kulturmiljo",
-		  "title": "Kulturmiljöprogrammet",
-		  "abstract": "2002 antog Tomelilla kommun ett kulturmiljöprogram. Programmet pekar ut värdefull bebyggelse. I kulturmiljöprogrammet finns generella beskrivningar av byarna. Sist i varje bybeskrivning finns också en karta där de värdefulla byggnaderna är markerade i olika färger. Färgerna representerar olika grad av skydd.Programmet är avsett att vara ett stöd för dig som äger en värdefull byggnad, och är juridiskt bindande när du ska ändra i din byggnad och vid bygglovsgivning. Åtgärder som normalt ska anmälas eller är bygglovsbefriade kan kräva bygglov om byggnaden finns med i kulturmiljöprogrammet. <br><a href='https://tomelilla.se/byggaboochmiljo/miljoochhallbarhet/kulturmiljo.1175.html' target='_blank'>Läs mer på hemsidan</a>",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "style": "byggnader_kulturmiljo",
-		  "opacity": 0.7,
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "skydd",
-				  "title": "Skydd: "
-			  },
-			  {
-				  "name": "omrade",
-				  "title": "Område: "
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/kulturmiljo/Kulturmiljöprogram_{{omrade}}.pdf'>Ortsrapport"
-			  },
-			  {
-				  "html": "<a target='_blank' href='https://tomelilla.se/byggaboochmiljo/miljoochhallbarhet/kulturmiljo.1175.html'>Mer information"
-			  }
-		  ]
-	  },
-  
-	  {
-		  "name": "geostore:laddstolpar",
-		  "title": "Laddstolpar",
-		  "group": "trafik_resor",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "laddstolpar",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "laddstationsnamn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "plats",
-				  "title": "Plats: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:offentliga_toa",
-		  "title": "Offentliga toaletter",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "toaletter",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Typ: "
-			  },
-			  {
-				  "name": "rullstolsanpassad",
-				  "title": "Rullstolsanpassad: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:samhallsservice",
-		  "title": "Samhällsservice",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "samhallsservice",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Verksamhet: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:surfzoner",
-		  "title": "Wifi-zoner",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "visible": false,
-		  "style": "wifi",
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Plats: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:atervinning",
-		  "title": "Återvinning",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "atervinning",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "kategori",
-				  "title": "Typ: "
-			  },
-			  {
-				  "name": "namn",
-				  "title": "namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "vintervag_linje",
-		  "title": "Snöröjning",
-		  "group": "bygga_bo_miljo",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "hasThemeLegend": true,
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "typ",
-				  "title": "Typ: "
-			  },
-			  {
-				  "name": "frekvens",
-				  "title": "Frekvens: "
-			  },
-			  {
-				  "html": "Instatsdjup: {{insatsdjup}}cm"
-			  },
-			  {
-				  "name": "anm",
-				  "title": "Kommentar: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:bibliotek",
-		  "title": "Bibliotek",
-		  "group": "kultur",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "bibliotek",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:kultur_fritid",
-		  "title": "Kultur och fritid",
-		  "group": "kultur",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "kultur_fritid",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:museum_konst",
-		  "title": "Museum och konsthall",
-		  "group": "kultur",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "style": "museum_konst",
-		  "visible": false,
-		  "attributes": [
-			  {
-				  "name": "namn",
-				  "title": "Namn: "
-			  },
-			  {
-				  "name": "beskrivning",
-				  "title": "Beskrivning: "
-			  },
-			  {
-				  "url": "url"
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:kommunmask",
-		  "title": "Kommunmask",
-		  "group": "none",
-		  "queryable": false,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "opacity": 0.3,
-		  "visible": true
-	  },
-	  {
-		  "name": "geostore:op2025_akermarksklasser",
-		  "title": "Åkermarksklasser",
-		  "group": "op2025",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "opacity": 0.6,
-		  "style": "akermark",
-		  "hasThemeLegend": true,
-		  "attributes": [
-			  {
-				  "name": "klass",
-				  "title": "Klassning: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:op2025_byggnadsminnen",
-		  "title": "Byggnadsminnen",
-		  "group": "op2025",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WFS",
-		  "visible": false,
-		  "style": "byggnadsminnen",
-		  "attributes": [
-			  {
-				  "name": "bygg_bet",
-				  "title": "Byggnad: "
-			  },
-			  {
-				  "name": "urspfunk1",
-				  "title": "Ursprungsfunktion: "
-			  }
-		  ]
-	  },
-	  {
-		  "name": "geostore:lst_ri_rorligt_friluftsliv_mb4kap2",
-		  "title": "Rörligt friluftsliv 4 kap. 2§",
-		  "group": "riksintressen",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "hasThemeLegend": true,
-		  "opacity": 0.7
-	  },
-	  {
-		  "name": "geostore:ri_friluftsliv",
-		  "title": "NV Frilufstliv 3 kap. 6§",
-		  "group": "riksintressen",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "hasThemeLegend": true,
-		  "opacity": 0.7
-	  },
-	  {
-		  "name": "raa_ri_kulturmiljovard_mb3kap6",
-		  "title": "RAÄ Kulturmiljövård 3 kap. 6§",
-		  "group": "riksintressen",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "hasThemeLegend": true,
-		  "opacity": 0.7
-	  },
-	  {
-		  "name": "geostore:ri_naturvard",
-		  "title": "NV Naturvård 3 kap. 6§",
-		  "group": "riksintressen",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "hasThemeLegend": true,
-		  "opacity": 0.7
-	  },
-	  {
-		  "name": "geostore:op2025_ri_vardefulla_amnen",
-		  "title": "SGU Värdefulla ämnen och material 3 kap. 7§",
-		  "group": "riksintressen",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "hasThemeLegend": true,
-		  "opacity": 0.7
-	  },
-	  {
-		  "name": "geostore:op2025_biotopskydd",
-		  "title": "Biotopskydd",
-		  "group": "op2025",
-		  "queryable": true,
-		  "source": "geostore",
-		  "type": "WMS",
-		  "renderMode": "image",
-		  "format": "image/png",
-		  "visible": false
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2022",
-		  "title": "Ortofoto 2022",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2020",
-		  "title": "Ortofoto 2020",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2018",
-		  "title": "Ortofoto 2018",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Fotokarta 2016",
-		  "title": "Ortofoto 2016",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2014",
-		  "title": "Ortofoto 2014",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2012",
-		  "title": "Ortofoto 2012",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2010",
-		  "title": "Ortofoto 2010",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:Ortofoto_farg_2007",
-		  "title": "Ortofoto 2007",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan"
-	  },
-	  {
-		  "name": "tlaservices:tomelilla_eko",
-		  "title": "Ekonomiska kartan 1970-tal",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "karta_farg",
-		  "source": "tlaservices",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:OI.Histortho_75",
-		  "title": "Ortofoto 1975",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "webservices:OI.Histortho_60",
-		  "title": "Ortofoto 1960",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "geoserver",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan",
-		  "isSwiperLayer": true
-	  },
-	  {
-		  "name": "tlaservices:flygfoto_37-48",
-		  "title": "Ortofoto 1937-48",
-		  "group": "historiska",
-		  "queryable": false,
-		  "style": "orto",
-		  "source": "tlaservices",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "isSwiperLayer": true
-	  },
-	  {
-		"name": "topowebbkartan_nedtonad_3857",
-		"source": "geowebcache",
-		"title": "Lantmäteriets topografiska webbkarta (nedtonad)",
-		"group": "background",
-		"queryable": false,
-		"style": "karta_gra",
-		"type": "WMTS",
+		"maximumScreenSpaceError": 16,
+		"maximumMemoryUsage": 2048,
+		"showOutline": true,
+		"outlineColor": "BLACK",
+		"visible": false
+		// "style": {
+		// 	"color": "color('#FFFFFF', 1)"
+		// }
+	  }, 
+	  	  {
+		"name": "Byggnader",
+		"title": "Byggnader LoD2 Tomelilla test",
+		"type": "THREEDTILE",
+		"abstract": "Byggnader",
+		"url": "../data/tileset2/tileset.json",
+		"group": "threed",
+		"queryable": true,
+		"maximumScreenSpaceError": 16,
+		"maximumMemoryUsage": 2048,
+		"showOutline": true,
+		"outlineColor": "BLACK",
 		"visible": true,
-		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"style": {
+			"color": "color('#FFFFFF', 1)"
+		}
+	  },
+	  {
+		"name": "Idrottshall1",
+		"title": "Idrottshall 1",
+		"type": "THREEDTILE",
+		"abstract": "Idrottshall1",
+		"url": "../data/idrottshall/1/tileset.json",
+		"group": "Idrottshallar",
+		"queryable": true,
+		"maximumScreenSpaceError": 16,
+		"showOutline": true,
+		"outlineColor": "BLACK",
+		"visible": true,
+		"style": {
+			"color": "color('#add8e6', 0.6)"
+		}
+	  },
+	  {
+		"name": "Idrottshall2",
+		"title": "Idrottshall 2",
+		"type": "THREEDTILE",
+		"abstract": "Idrottshall2",
+		"url": "../data/idrottshall/2/tileset.json",
+		"group": "Idrottshallar",
+		"queryable": true,
+		"maximumScreenSpaceError": 16,
+		"showOutline": true,
+		"outlineColor": "BLACK",
+		"visible": true,
+		"style": {
+			"color": "color('#4682b4', 0.6)"
+		}
+	  },
+	  {
+		"name": "Idrottshall3",
+		"title": "Idrottshall 3",
+		"type": "THREEDTILE",
+		"abstract": "Idrottshall1",
+		"url": "../data/idrottshall/3/tileset.json",
+		"group": "Idrottshallar",
+		"queryable": true,
+		"maximumScreenSpaceError": 16,
+		"showOutline": true,
+		"outlineColor": "BLACK",
+		"visible": true,
+		"opacity": 0.6,
+		"style": {
+			"color": "color('#4169e1', 0.6)"
+		}
+	  },
+	  {
+		"name": "geostore:trad_globe",
+		"title": "Träd",
+		"abstract": "Träd",
+		"group": "threed",
+		"queryable": true,
+		"source": "geostore",
+		"dataSource": "https://kartor.tomelilla.se/geoserver/geostore/ows",
+		"type": "THREEDTILE",
+		"altitudeMode": "clampToGround",
+		"visible": true,
+		"style": "none",
+		"model": {
+			"gltf": {
+				"baseModel": "/data/models/trees/Scene_3/Scene.gltf",
+				"heightAttr": "hojd",
+				"speciesAttr": "art",
+				"baseModelHeight":  8.6844,
+				"species": {
+					"Ek": {
+						"model": "/data/models/trees/Scene_3/Scene.gltf",
+						"modelHeight":  8
+					},
+					"Bjork": {
+						"model": "/data/models/trees/Scene_3/Scene.gltf",
+						"modelHeight":  9
+					}
+				}
+			}
+		  }
+	  },
+	{
+		"name": "geostore:byggnader_globe",
+		"title": "Byggnader QGIS",
+		"abstract": "Byggnaderqgis",
+		"group": "threed",
+		"queryable": true,
+		"source": "geostore",
+		"dataSource": "https://kartor.tomelilla.se/geoserver/geostore/ows",
+		"type": "THREEDTILE",
+		"extrusion": {
+			"groundAttr": "mark_hojd",
+			"roofAttr": "tak_hojd",
+			"color": "RED",
+			"opacity": 0.9,
+			"outline": true,
+			"outlineColor": "DARKGRAY"
+		},
+		"visible": true
+	},
+
+	  {
+		"name": "Detaljplaner test",
+		"title": "Detaljplaner (test)",
+		"group": "twod",
+		"source": "data/detaljplaner_test_3857.geojson",
+		// "style": "origo-logo",
+		"type": "GEOJSON",
+		"altitudeMode": "clampToGround",
+		"visible": false
+	  },
+	{
+		"name": "geostore:vardcentral",
+		"title": "Vårdcentral",
+		"group": "stod_omsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "vardcentral",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:sarskilda_boenden",
+		"title": "Särskilda boenden",
+		"group": "stod_omsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "sarskilda_boenden",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"Mode": "image",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "boende",
+				"title": "Boende: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"name": "adress",
+				"title": "Adress: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:vindkraft_op2040",
+		"title": "Utredningsområden för vindkraft",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"opacity": 0.7,
+		"source": "geostore",
+		"hasThemeLegend": true,
+		"type": "WMS",
 		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "omr_num",
+				"title": "Nummer: "
+			}
+		]
+	},
+	{
+		"name": "geostore:vaghallare_2024_tmla",
+		"title": "Väghållare",
+		"group": "trafik_resor",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"hasThemeLegend": true,
+		"visible": false,
+		"attributes": [
+			{
+				"name": "vaghallart",
+				"title": "Väghållartyp: "
+			}
+		]
+	},
+	{
+		"name": "geostore:dagcentral",
+		"title": "Träffpunkt för seniorer",
+		"group": "stod_omsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "dagcentral",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url",
+				"title": "Länk till hemsida"
+			}
+		]
+	},
+	{
+		"name": "webservices:fastighetsindelning",
+		"title": "Fastighetsindelning",
+		"group": "bygga_bo_miljo",
+		"queryable": false,
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"style": "empty",
+		"visible": false
+	},
+	{
+		"name": "geostore:kommunagd",
+		"title": "Kommunägd mark",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "kommunagd",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "fastighet",
+				"title": "Fastighet: "
+			}
+		]
+	},
+	{
+		"name": "geostore:detaljplaner",
+		"title": "Gällande detaljplaner",
+		"group": "detaljplanering",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "detaljplaner",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "planbet",
+				"title": "Planbeteckning: "
+			},
+			{
+				"name": "plnamn",
+				"title": "Plannamn: "
+			},
+			{
+				"name": "tome_bet",
+				"title": "Intern beteckning: "
+			},
+			{
+				"name": "plantyp",
+				"title": "Plantyp: "
+			},
+			{
+				"name": "laga kraft",
+				"title": "Laga kraft: "
+			},
+			{
+				"name": "fastställd (kungl/läns)",
+				"title": "Fastställd: "
+			},
+			{
+				"html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/{{omrade}}/{{plankarta}}.pdf'>Plankarta"
+			},
+			{
+				"html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/{{omrade}}/{{planbeskrivning}}.pdf'>Planbeskrivning"
+			}
+		]
+	},
+	{
+		"name": "geostore:pagaende_planer",
+		"title": "Pågående detaljplaner",
+		"group": "detaljplanering",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"filter": "status == 'Pågående'",
+		"style": "pagaende_planer",
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Planbenämning: "
+			},
+			{
+				"name": "status",
+				"title": "Status: "
+			}
+		]
+	},
+	{
+		"name": "geostore:skola_tomelillapoi__skolor",
+		"title": "Grundskola",
+		"group": "utbildning_och_barnomsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "skolor",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"filter": "undergrupp = 'Grundskolor'",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "titel",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivnin",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:skola_tomelillapoi__forskolor",
+		"title": "Förskola",
+		"group": "utbildning_och_barnomsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "forskolor",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"filter": "undergrupp = 'Förskolor'",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "titel",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivnin",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:skola_tomelillapoi__ovriga",
+		"title": "Andra skolor",
+		"group": "utbildning_och_barnomsorg",
+		"queryable": true,
+		"source": "geostore",
+		"style": "skolor",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"filter": "undergrupp = 'Andra skolor'",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "titel",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivnin",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:skola_upptagningsomraden",
+		"title": "Upptagningsområden",
+		"group": "utbildning_och_barnomsorg",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "skoldistrikt",
+				"title": "Skoldistrikt: "
+			}
+		]
+	},
+	{
+		"name": "geostore:badplats",
+		"title": "Simbassänger",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "badplats",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:utegym",
+		"title": "Utegym",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "idrottsanl",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url",
+				"title": "Mer information"
+			},
+			{
+				"img": "foto",
+				"urlPrefix": "https://kartor.tomelilla.se/img/lekplatser/"
+			}
+		]
+	},
+	{
+		"name": "geostore:lekplatser",
+		"title": "Lekplatser",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "sporthall",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Typ: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"carousel": "url",
+				"urlPrefix": "https://gis.tomelilla.se/detaljplaner/INVENTERINGAR/lekplatser/",
+				"splitter": ","
+			}
+		]
+	},
+	{
+		"name": "motionsleder",
+		"title": "Motionsleder",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "motionsleder",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "plats",
+				"title": "Plats: "
+			},
+			{
+				"name": "stracka",
+				"title": "Sträcka: "
+			}
+		]
+	},
+	{
+		"name": "vandringsleder",
+		"title": "Vandringsleder",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "vandringsleder",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			}
+		]
+	},
+	{
+		"name": "geostore:cykelleder_2025",
+		"title": "Cykelleder",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"hasThemeLegend": true,
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "klassifice",
+				"title": "Klassificering: "
+			},
+			{
+				"name": "namn",
+				"title": "Namn: "
+			}
+		]
+	},
+	{
+		"name": "ridleder",
+		"title": "Ridleder",
+		"group": "uppleva_gora",
+		"queryable": false,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false
+	},
+	{
+		"name": "hundrastgardar",
+		"title": "Hundrastgårdar",
+		"group": "uppleva_gora",
+		"queryable": false,
+		"source": "geostore",
+		"style": "hundrastgardar",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false
+	},
+	{
+		"name": "geostore:Skaneflex",
+		"title": "Skåneflex",
+		"group": "trafik_resor",
+		"queryable": true,
+		"source": "geostore",
+		"opacity": 0.6,
+		"hasThemeLegend": true,
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attributes": [
+			{
+				"html": "<a target='_blank' href='https://www.skanetrafiken.se/skaneflex'>Läs mer om Skåneflex"
+			}
+		]
+	},
+	{
+		"name": "geostore:idrottsanl",
+		"title": "Idrottsanläggning",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "idrottsanl",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"filter": "kategori = 'idrottsplats'",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			}
+		]
+	},
+	{
+		"name": "geostore:infopoints",
+		"title": "Infopoints",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "infopoints",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "Namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "Adress",
+				"title": "Adress: "
+			},
+			{
+				"name": "Öppettider",
+				"title": "Öppettider: "
+			},
+			{
+				"name": "Hemsida",
+				"title": "Hemsida: "
+			}
+		]
+	},
+	{
+		"name": "geostore:idrottsanl__sporthall",
+		"title": "Sporthall",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "sporthall",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"filter": "kategori = 'sporthall'",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:grillplatser",
+		"title": "Grillplatser",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"style": "grillplatser",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "sittplatser",
+				"title": "Sittplatser: "
+			},
+			{
+				"img": "photo1",
+				"urlPrefix": "https://kartor.tomelilla.se/img/grill/"
+			},
+			{
+				"img": "photo2",
+				"urlPrefix": "https://kartor.tomelilla.se/img/grill/"
+			}
+		]
+	},
+	{
+		"name": "geostore:naturvardsprg",
+		"title": "Naturreservat och naturvårdsområden",
+		"group": "uppleva_gora",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"style": "naturvard",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "title",
+				"title": "Namn: "
+			},
+			{
+				"name": "desc",
+				"title": "Beskrivning: "
+			},
+			{
+				"title": "Mer information",
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:lediga_tomter",
+		"title": "Lediga bostadstomter",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"filter": "status == '1'",
+		"visible": false,
+		"style": "lediga_tomter_extern",
+		"hasThemeLegend": true,
+		"attributes": [
+			{
+				"name": "title",
+				"title": "Fastighet: "
+			},
+			{
+				"name": "desc",
+				"title": "Beskrivning: "
+			},
+			{
+				"html": "<a target='_blank' href='https://tomelilla.se/byggaboochmiljo/tomterochmark/ledigabostadstomter.1476.html'>Läs mer"
+			}
+		]
+	},
+	// {
+	// 	"name": "tomtko_omraden",
+	// 	"title": "Tomtkö områden",
+	// 	"group": "bygga_bo_miljo",
+	// 	"queryable": true,
+	// 	"source": "geostore",
+	// 	"type": "WMS",
+	// 	"format": "image/png",
+	// 	"visible": false,
+	// 	"style": "tomtko_omraden",
+	// 	"hasThemeLegend": true,
+	// 	"attributes": [
+	// 		{
+	// 			"name": "name",
+	// 			"title": "Område: "
+	// 		},
+	// 		{
+	// 			"name": "beskrivning",
+	// 			"title": "Beskrivning: "
+	// 		}
+	// 	]
+	// },
+	{
+		"name": "ledig_verksamhetsmark",
+		"title": "Ledig verksamhetsmark",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"style": "ledig_verksamhetsmark",
+		"hasThemeLegend": true,
+		"attributes": [
+			{
+				"name": "Fastighet",
+				"title": "Fastighetsbeteckning: "
+			},
+			{
+				"html": "<a target='_blank' href='https://tomelilla.se/naringslivochforetagande/verksamhetsmark.2485.html'>Läs mer"
+			}
+		]
+	},
+	{
+		"name": "byggnader_kulturmiljo",
+		"title": "Kulturmiljöprogrammet",
+		"abstract": "2002 antog Tomelilla kommun ett kulturmiljöprogram. Programmet pekar ut värdefull bebyggelse. I kulturmiljöprogrammet finns generella beskrivningar av byarna. Sist i varje bybeskrivning finns också en karta där de värdefulla byggnaderna är markerade i olika färger. Färgerna representerar olika grad av skydd.Programmet är avsett att vara ett stöd för dig som äger en värdefull byggnad, och är juridiskt bindande när du ska ändra i din byggnad och vid bygglovsgivning. Åtgärder som normalt ska anmälas eller är bygglovsbefriade kan kräva bygglov om byggnaden finns med i kulturmiljöprogrammet. <br><a href='https://tomelilla.se/byggaboochmiljo/miljoochhallbarhet/kulturmiljo.1175.html' target='_blank'>Läs mer på hemsidan</a>",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"style": "byggnader_kulturmiljo",
+		"opacity": 0.7,
+		"visible": false,
+		"attributes": [
+			{
+				"name": "skydd",
+				"title": "Skydd: "
+			},
+			{
+				"name": "omrade",
+				"title": "Område: "
+			},
+			{
+				"html": "<a target='_blank' href='https://gis.tomelilla.se/detaljplaner/kulturmiljo/Kulturmiljöprogram_{{omrade}}.pdf'>Ortsrapport"
+			},
+			{
+				"html": "<a target='_blank' href='https://tomelilla.se/byggaboochmiljo/miljoochhallbarhet/kulturmiljo.1175.html'>Mer information"
+			}
+		]
+	},
+
+	{
+		"name": "geostore:laddstolpar",
+		"title": "Laddstolpar",
+		"group": "trafik_resor",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "laddstolpar",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "laddstationsnamn",
+				"title": "Namn: "
+			},
+			{
+				"name": "plats",
+				"title": "Plats: "
+			}
+		]
+	},
+	{
+		"name": "geostore:offentliga_toa",
+		"title": "Offentliga toaletter",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "toaletter",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Typ: "
+			},
+			{
+				"name": "rullstolsanpassad",
+				"title": "Rullstolsanpassad: "
+			}
+		]
+	},
+	{
+		"name": "geostore:samhallsservice",
+		"title": "Samhällsservice",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "samhallsservice",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Verksamhet: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:surfzoner",
+		"title": "Wifi-zoner",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"style": "wifi",
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Plats: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:atervinning",
+		"title": "Återvinning",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "atervinning",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "kategori",
+				"title": "Typ: "
+			},
+			{
+				"name": "namn",
+				"title": "namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "vintervag_linje",
+		"title": "Snöröjning",
+		"group": "bygga_bo_miljo",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"hasThemeLegend": true,
+		"visible": false,
+		"attributes": [
+			{
+				"name": "typ",
+				"title": "Typ: "
+			},
+			{
+				"name": "frekvens",
+				"title": "Frekvens: "
+			},
+			{
+				"html": "Instatsdjup: {{insatsdjup}}cm"
+			},
+			{
+				"name": "anm",
+				"title": "Kommentar: "
+			}
+		]
+	},
+	{
+		"name": "geostore:bibliotek",
+		"title": "Bibliotek",
+		"group": "kultur",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "bibliotek",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:kultur_fritid",
+		"title": "Kultur och fritid",
+		"group": "kultur",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "kultur_fritid",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:museum_konst",
+		"title": "Museum och konsthall",
+		"group": "kultur",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "museum_konst",
+		"visible": false,
+		"attributes": [
+			{
+				"name": "namn",
+				"title": "Namn: "
+			},
+			{
+				"name": "beskrivning",
+				"title": "Beskrivning: "
+			},
+			{
+				"url": "url"
+			}
+		]
+	},
+	{
+		"name": "geostore:kommunmask",
+		"title": "Kommunmask",
+		"group": "none",
+		"queryable": false,
+		"source": "geostore",
+		"format": "image/png",
+		"opacity": 0.3,
+		"visible": true,
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"style": "mask"
+	},
+	{
+		"name": "geostore:op2025_akermarksklasser",
+		"title": "Åkermarksklasser",
+		"group": "op2025",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"opacity": 0.6,
+		"style": "akermark",
+		"hasThemeLegend": true,
+		"attributes": [
+			{
+				"name": "klass",
+				"title": "Klassning: "
+			}
+		]
+	},
+	{
+		"name": "geostore:op2025_byggnadsminnen",
+		"title": "Byggnadsminnen",
+		"group": "op2025",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WFS",
+		"altitudeMode": "clampToGround",
+		"visible": false,
+		"style": "byggnadsminnen",
+		"attributes": [
+			{
+				"name": "bygg_bet",
+				"title": "Byggnad: "
+			},
+			{
+				"name": "urspfunk1",
+				"title": "Ursprungsfunktion: "
+			}
+		]
+	},
+	{
+		"name": "geostore:lst_ri_rorligt_friluftsliv_mb4kap2",
+		"title": "Rörligt friluftsliv 4 kap. 2§",
+		"group": "riksintressen",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"hasThemeLegend": true,
+		"opacity": 0.7
+	},
+	{
+		"name": "geostore:ri_friluftsliv",
+		"title": "NV Frilufstliv 3 kap. 6§",
+		"group": "riksintressen",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"hasThemeLegend": true,
+		"opacity": 0.7
+	},
+	{
+		"name": "raa_ri_kulturmiljovard_mb3kap6",
+		"title": "RAÄ Kulturmiljövård 3 kap. 6§",
+		"group": "riksintressen",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"hasThemeLegend": true,
+		"opacity": 0.7
+	},
+	{
+		"name": "geostore:ri_naturvard",
+		"title": "NV Naturvård 3 kap. 6§",
+		"group": "riksintressen",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"hasThemeLegend": true,
+		"opacity": 0.7
+	},
+	{
+		"name": "geostore:op2025_ri_vardefulla_amnen",
+		"title": "SGU Värdefulla ämnen och material 3 kap. 7§",
+		"group": "riksintressen",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"hasThemeLegend": true,
+		"opacity": 0.7
+	},
+	{
+		"name": "geostore:op2025_biotopskydd",
+		"title": "Biotopskydd",
+		"group": "op2025",
+		"queryable": true,
+		"source": "geostore",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2022",
+		"title": "Ortofoto 2022",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2020",
+		"title": "Ortofoto 2020",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2018",
+		"title": "Ortofoto 2018",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Fotokarta 2016",
+		"title": "Ortofoto 2016",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2014",
+		"title": "Ortofoto 2014",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2012",
+		"title": "Ortofoto 2012",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2010",
+		"title": "Ortofoto 2010",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:Ortofoto_farg_2007",
+		"title": "Ortofoto 2007",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan"
+	},
+	{
+		"name": "tlaservices:tomelilla_eko",
+		"title": "Ekonomiska kartan 1970-tal",
+		"group": "historiska",
+		"queryable": false,
+		"style": "karta_farg",
+		"source": "tlaservices",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:OI.Histortho_75",
+		"title": "Ortofoto 1975",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:OI.Histortho_60",
+		"title": "Ortofoto 1960",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "tlaservices:flygfoto_37-48",
+		"title": "Ortofoto 1937-48",
+		"group": "historiska",
+		"queryable": false,
+		"style": "orto",
+		"source": "tlaservices",
+		"type": "WMS",
+		"format": "image/png",
+		"visible": false,
 		"isSwiperLayer": true
 	  },
 	  {
-		"name": "topowebbkartan_3857",
-		"source": "geowebcache",
-		"title": "Lantmäteriets topografiska webbkarta",
+		"name": "webservices:Ortofoto_0.16",
+		"title": "Ortofoto 2024",
+		"group": "background",
+		"queryable": false,
+		"style": "orto",
+		"source": "geoserver",
+		"type": "WMS",
+		"visible": true,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan",
+		"isSwiperLayer": true
+	},
+	{
+		"name": "webservices:topowebbkartan",
+		"title": "Topowebbkartan",
 		"group": "background",
 		"queryable": false,
 		"style": "karta_farg",
-		"type": "WMTS",
+		"source": "bakgrund",
+		"type": "WMS",
 		"visible": false,
 		"attribution": "&copy Lantmäteriet Geodatasamverkan",
-		"format": "image/png"
-	  },
-	  {
-		"name": "osm",
-		"title": "OpenStreetMap",
+		"isUnderSwiper": true
+	},
+	{
+		"name": "webservices:topowebbkartan_nedtonad",
+		"title": "Topowebbkartan nedtonad",
 		"group": "background",
 		"queryable": false,
-		"style": "karta_osm",
-		"type": "OSM",
-		"visible": false
-	  },
-	  {
-		  "name": "webservices:topowebbkartan_nedtonad",
-		  "title": "Topowebbkartan nedtonad tom",
-		  "group": "background",
-		  "queryable": false,
-		  "style": "karta_gra",
-		  "source": "bakgrund",
-		  "type": "WMS",
-		  "format": "image/png",
-		  "visible": false,
-		  "version": "1.3.0",
-		  "attribution": "&copy Lantmäteriet Geodatasamverkan"
-	  }
+		"style": "karta_gra",
+		"source": "geoserver",
+		"type": "WMS",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan"
+	},
+	{
+		"name": "webservices:terrangskuggning",
+		"title": "Terrängskuggning",
+		"group": "background",
+		"queryable": false,
+		"style": "karta_gra",
+		"source": "geoserver",
+		"type": "WMS",
+		"visible": false,
+		"attribution": "&copy Lantmäteriet Geodatasamverkan"
+	}
 	],
 	"styles": {
-	  "mask": [
-		[
-		  {
-			"stroke": {
-			  "color": "rgba(0,0,0,1.0)"
-			},
-			"fill": {
-			  "color": "rgba(0,0,0,1.0)"
-			}
-		  }
+		"nodvatten_extern": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&STYLE=nodvatten_extern&FORMAT=image%2Fpng&LAYER=nodvatten1"
+					},
+					"extendedLegend": true,
+					"wmsStyle": "nodvatten_extern"
+				}
+			]
+		],
+		"motionsleder": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&STYLE=&FORMAT=image%2Fpng&LAYER=motionsleder"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"vandringsleder": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&STYLE=&FORMAT=image%2Fpng&LAYER=vandringsleder"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"cykelleder_2025": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=cykelleder_2025_stil&LAYER=cykelleder_2025"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"cykelleder": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&STYLE=&FORMAT=image%2Fpng&LAYER=cykelleder"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"byggnader_kulturmiljo": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&LAYER=byggnader_kulturmiljo"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"pagaende_planer": [
+			[
+				{
+					"fill": { "color": "rgba(51, 160, 44, 0.7)" },
+					"stroke": { "color": "rgba(34, 106, 34,1)", "width": 1 },
+					"text": {
+						"font": "Normal 12px Arial",
+						"textAlign": "center",
+						"text": "{{namn}}",
+						"fill": { "color": "rgba(0,0,0,1.0)" },
+						"stroke": { "color": "rgba(255,255,255,1)", "width": 1.5 }
+					},
+					"filter": "[status] == 'Pågående'",
+					"label": "Pågående detaljplaner"
+				}
+			]
+		],
+		"detaljplaner": [
+			[
+				{
+					"fill": { "color": "rgba(51, 160, 44, 0.7)" },
+					"stroke": { "color": "rgba(34, 106, 34,1)", "width": 1 },
+					"text": {
+						"font": "Normal 12px Arial",
+						"textAlign": "center",
+						"text": "{{tome_bet}}",
+						"fill": { "color": "rgba(0,0,0,1.0)" },
+						"stroke": { "color": "rgba(255,255,255,1)", "width": 1.5 }
+					},
+					"filter": "[plantyp] == 'ÄDP'",
+					"label": "Ändring detaljplan"
+				}
+			],
+			[
+				{
+					"fill": { "color": "rgba(55, 126, 184, 0.5)" },
+					"stroke": { "color": "rgba(24, 58, 208,1)", "width": 1 },
+					"text": {
+						"font": "Normal 12px Arial",
+						"textAlign": "center",
+						"text": "{{tome_bet}}",
+						"fill": { "color": "rgba(0,0,0,1.0)" },
+						"stroke": { "color": "rgba(255,255,255,1)", "width": 1.5 }
+					},
+					"label": "Detaljplaner"
+				}
+			]
+		],
+		"lediga_tomter": [
+			[
+				{
+					"fill": { "color": "rgba(51, 160, 44, 0.7)" },
+					"stroke": { "color": "rgba(34, 106, 34,1)", "width": 1.5 },
+					"filter": "[status] == '1'",
+					"label": "Lediga tomter"
+				}
+			],
+			[
+				{
+					"image": {
+						"size": [64, 64],
+						"src": "img/png/hus_gront.png",
+						"filter": "[status] == '1'",
+						"scale": 1,
+						"maxScale": 31000,
+						"minScale": 300000
+					}
+				}
+			]
+		],
+		"none" : [
+			[
+				{
+					"stroke": {
+						"color": "rgba(0,0,0,1.0)"
+					},
+					"fill": {
+						"color": "rgba(0,200,0,0.7)"
+					}
+				}
+			]
+		],
+		"kommunagd": [
+			[
+				{
+					"stroke": {
+						"color": "rgba(0,0,0,1.0)"
+					},
+					"fill": {
+						"color": "rgba(227,26,28,0.7)"
+					}
+				}
+			]
+		],
+		"mask": [
+			[
+				{
+					"stroke": {
+						"color": "rgba(0,0,0,1.0)"
+					},
+					"fill": {
+						"color": "rgba(128, 128, 128, 0.5)"
+					}
+				}
+			]
+		],
+		"vardcentral": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/samhallsinfo_sjukhus.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"sarskilda_boenden": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/samhallsinfo_vardboende.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"empty": [
+			[
+				{
+					"stroke": {
+						"color": "rgba(0,0,0,0)"
+					},
+					"fill": {
+						"color": "rgba(0,0,0,0)"
+					}
+				}
+			]
+		],
+		"dagcentral": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/samhallsinfo_kontaktcenter.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"forskolor": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/utbildning_forskola.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"skolor": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/utbildning_skola.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"atervinning": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/miljoenergi_atervinningsstation.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"laddstolpar": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/parkering_laddplats.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"grillplatser": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_grillplats.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"hundrastgardar": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/icon_hundtass.png"
+					}
+				}
+			]
+		],
+		"hundlatrin": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/hundlatriner.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"samhallsservice": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/samhallsinfo_information.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"wifi": [
+			[
+				{
+					"icon": {
+						"src": "img/png/wifi.png"
+					}
+				}
+			]
+		],
+		"utbyggnadsomraden": [
+			[
+				{
+					"stroke": {
+						"color": "rgba(0,0,0,1.0)"
+					},
+					"fill": {
+						"color": "rgba(251,154,153,0.7)"
+					}
+				}
+			]
+		],
+		"akermark": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&LAYER=geostore:op2025_akermarksklasser"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"bredbandsomraden": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=bredbandsomraden&LAYER=bredbandsomraden"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"lediga_tomter_extern": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=lediga_tomter_extern&LAYER=lediga_tomter"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"tomtko_omraden": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=tomtko_omraden&LAYER=tomtko_omraden"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"ledig_verksamhetsmark": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=ledig_verksamhetsmark&LAYER=ledig_verksamhetsmark"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"Skaneflex": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/wms?SERVICE=WMS&REQUEST=GetLegendGraphic&DPI=96&FORMAT=image/png&ICONLABELSPACE=3&LAYERTITLE=TRUE&RULELABEL=TRUE&TRANSPARENT=TRUE&BOXSPACE=1&SYMBOLWIDTH=6&SYMBOLHEIGHT=4&SYMBOLSPACE=3&LAYERSPACE=5&LAYERTITLESPACE=-5.3&LAYERFONTSIZE=0.5&LAYERFONTCOLOR=%23FFFFFF&STYLE=skaneflex_stil&LAYER=Skaneflex"
+					},
+					"extendedLegend": true
+				}
+			]
+		],
+		"husbilsparkering": [
+			[
+				{
+					"icon": {
+						"src": "https://kartor.tomelilla.se/geoserver/geostore/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&STYLE=&FORMAT=image%2Fpng&LAYER=husbilsparkering"
+					},
+					"extendedLegend": true,
+					"wmsStyle": "husbilsparkering"
+				}
+			]
+		],
+		"toaletter": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/samhallsinfo_konsumentrad.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"badplats": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_badplats.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"kultur_fritid": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/kultur_teater.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"museum_konst": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/kultur_museum.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"bibliotek": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/kultur_bibliotek.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"idrottsanl": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_sportanlaggning.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"sporthall": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_lekplats.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"naturvard": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_information.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"infopoints": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/fritid_information.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"byggnadsminnen": [
+			[
+				{
+					"icon": {
+						"size": [64, 64],
+						"src": "img/png/byggnadsminnen.png",
+						"scale": 0.55
+					}
+				}
+			]
+		],
+		"karta_osm": [
+			[
+				{
+					"image": {
+						"src": "img/png/osm.png"
+					}
+				}
+			]
+		],
+		"karta_gra": [
+			[
+				{
+					"image": {
+						"src": "img/png/gra.png"
+					}
+				}
+			]
+		],
+		"karta_farg": [
+			[
+				{
+					"image": {
+						"src": "img/png/farg.png"
+					}
+				}
+			]
+		],
+		"orto": [
+			[
+				{
+					"image": {
+						"src": "img/png/orto.png"
+					}
+				}
+			]
 		]
-	  ],
-	  "origo-logo": [
-		[
-		  {
-			"label": "Origokommuner",
-			"circle": {
-			  "radius": 10,
-			  "stroke": {
-				"color": "rgba(0,0,0,1)",
-				"width": 2.5
-			  },
-			  "fill": {
-				"color": "rgba(255,255,255,0.9)"
-			  }
-			}
-		  },
-		  {
-			"circle": {
-			  "radius": 2.5,
-			  "stroke": {
-				"color": "rgba(0,0,0,0)",
-				"width": 1
-			  },
-			  "fill": {
-				"color": "rgba(37,129,196,1)"
-			  }
-			}
-		  }
-		]
-	  ],
-	  "cirkel": [
-		[
-		  {
-			"circle": {
-			  "radius": 6,
-			  "stroke": {
-				"color": "rgba(0,0,0,1)",
-				"width": 2
-			  },
-			  "fill": {
-				"color": "rgba(0,0,0,0.5)"
-			  }
-			}
-		  }
-		]
-	  ],
-	  "fastigheter_orto": [
-		[
-		  {
-			"label": "Fastighetsgränser",
-			"icon": {
-			  "src": "img/png/fastigheter_orto.png"
-			}
-		  }
-		]
-	  ],
-	  "karta_osm": [
-		[
-		  {
-			"image": {
-			  "src": "img/png/osm.png"
-			}
-		  }
-		]
-	  ],
-	  "karta_gra": [
-		[
-		  {
-			"image": {
-			  "src": "img/png/gra.png"
-			}
-		  }
-		]
-	  ],
-	  "karta_farg": [
-		[
-		  {
-			"image": {
-			  "src": "img/png/farg.png"
-			}
-		  }
-		]
-	  ],
-	  "orto": [
-		[
-		  {
-			"image": {
-			  "src": "img/png/orto.png"
-			}
-		  }
-		]
-	  ]
 	}
   }
-  

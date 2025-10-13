@@ -3,5 +3,7 @@ dist
 css/style.css
 node_modules
 npm-debug-log
-build
-data/*
+/data/
+data
+/build/
+/plugins/

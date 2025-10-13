@@ -3,11 +3,10 @@ import ImageWMSSource from 'ol/source/ImageWMS';
 import tile from './tile';
 import maputils from '../maputils';
 import image from './image';
-import { get as getProjection } from 'ol/proj';
-import { createXYZ } from 'ol/tilegrid';
+// import { get as getProjection } from 'ol/proj';
+// import { createXYZ } from 'ol/tilegrid';
 
 function createTileSource(options) {
-  console.log(options)
   const sourceOptions = {
     attributions: options.attribution,
     url: options.url,
@@ -15,6 +14,7 @@ function createTileSource(options) {
     crossOrigin: options.crossOrigin,
     projection: options.projection,
     tileGrid: options.tileGrid,
+    maxTilesLoading: 5,
     params: {
       LAYERS: options.id,
       TILED: true,
@@ -23,10 +23,10 @@ function createTileSource(options) {
       STYLES: options.style
     }
   };
-  sourceOptions.tileGrid = createXYZ({
-    extent: getProjection('EPSG:3857').getExtent(),
-    tileSize: 256
-  });
+  // sourceOptions.tileGrid = createXYZ({
+  //   extent: getProjection(options.projection.code_).getExtent(),
+  //   tileSize: 256
+  // });
   if (options.imageLoadFunction) {
     sourceOptions.tileLoadFunction = options.imageLoadFunction;
   }
