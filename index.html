@@ -9,7 +9,7 @@
     The CSP should be modified with adding specific sources that should be allowed, f.e. connect-src 'self' webanalysis.example.com geospatialdata.example.com; -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';">
     <meta name="referrer" content="same-origin"> -->
-    <title>Origo exempel</title>
+    <title>Tomelilla Origo Globe</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="plugins/globe/globe.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/png/logo.png">
@@ -30,19 +30,22 @@
         const globe = Globe({
           showGlobe: true,
           globeOnStart: true,
+          viewShed: true,
+          streetView: true,
+          fx: false,
           deactivateControls: [],
           settings: {
             depthTestAgainstTerrain: true,
             enableAtmosphere: true,
             enableGroundAtmosphere: true,
-            enableFog: true,
+            enableFog: false,
             enableLighting: true,
             shadows: {
               darkness: 0.3,
               fadingEnabled: true,
-              maximumDistance: 5000,
+              maximumDistance: 1500,
               normalOffset: true,
-              size: 4096,
+              size: 2048,
               softShadows: false
             },
             skyBox: {
@@ -60,14 +63,14 @@
         // cesiumIontoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMzlhOGYyNy0wNmJlLTQyN2UtYWRmOS02ZTc5ODI1Y2IxMjgiLCJpZCI6MTEyMjM2LCJpYXQiOjE3MzkyODkxMTJ9.UhHHrNp_ihRzssD5_eNWG_6MV8wndNA05nKf_hQoEAg',
           // "gltf": [
           //   {
-          //     "url": "../data/Idrottshall/1.gltf",
-          //       "lat": 55.5437,
-          //       "lng": 13.9511,
-          //     "height": 10, // Needs heightReference to be set to NONE
-          //     // "heightReference": "RELATIVE_TO_TERRAIN", //https://cesium.com/learn/ion-sdk/ref-doc/global.html?classFilter=heightReference#HeightReference
-          //     // "animation": {
-          //     //   "name": "SphereAction"
-          //     // }
+          //     "url": "http://localhost:9966/data/origo_globe.gltf",
+          //     "lat": 18.10697,
+          //     "lng": 59.12514,
+          //     "height": 0, // Needs heightReference to be set to NONE
+          //     "heightReference": "RELATIVE_TO_TERRAIN", //https://cesium.com/learn/ion-sdk/ref-doc/global.html?classFilter=heightReference#HeightReference
+          //     "animation": {
+          //       "name": "SphereAction"
+          //     }
           //   }
           // ],
           cesiumTerrainProvider: '../data/TerrainOptimized17/',
